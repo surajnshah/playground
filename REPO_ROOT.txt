@@ -1,0 +1,13 @@
+IMPORTANT - PLEASE DO NOT DELETE THIS FILE
+-------------------------------------------------------
+
+The purpose of this file is to demarcate the root of the repository.
+
+For many tools (testing or otherwise) it is really useful to be able to find the
+root of the repository and then migrate from there downwards
+
+
+
+
+
+
