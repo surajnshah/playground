@@ -15,24 +15,21 @@ public class TestHelloWorldAgain {
     private HelloWorldAgain h;
 
     @Before
-    public void setUp() throws Exception
-    {
+    public void setUp() throws Exception {
         h = new HelloWorldAgain();
     }
 
     @Test
-    public void testHelloEmpty()
-    {
-        assertEquals(h.getName(),"");
-        assertEquals(h.getMessage(),"Hello!");
+    public void testHelloEmpty() {
+        assertEquals(h.getName(), "");
+        assertEquals(h.getMessage(), "Hello!");
     }
 
     @Test
-    public void testHelloWorldAgain()
-    {
+    public void testHelloWorldAgain() {
         h.setName("World");
-        assertEquals(h.getName(),"World");
-        assertEquals(h.getMessage(),"Hello World!");
+        assertEquals(h.getName(), "World");
+        assertEquals(h.getMessage(), "Hello World!");
     }
 
 }
