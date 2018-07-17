@@ -30,7 +30,19 @@
             <artifactId>commons-io</artifactId>
             <version>2.6</version>
         </dependency>
+        <dependency>
+            <groupId>org.hyperic</groupId>
+            <artifactId>sigar</artifactId>
+            <version>1.6.5.132-7</version>
+        </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>redhat</id>
+            <name>redhat</name>
+            <url>http://maven.repository.redhat.com/ga/</url>
+        </repository>
+    </repositories>
 
 </project>
