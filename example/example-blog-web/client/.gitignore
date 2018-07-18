@@ -1,20 +1,3 @@
-# Eclipse
-.classpath
-.project
-.settings/
-
-# Intellij
-.idea/
-*.iml
-*.iws
-
-# Mac
-.DS_Store
-
-# Maven
-log/
-target/
-
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
