@@ -35,6 +35,12 @@
             <artifactId>sigar</artifactId>
             <version>1.6.5.132-7</version>
         </dependency>
+        <dependency>
+            <groupId>com.surajnshah</groupId>
+            <artifactId>example-processbuilder</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <repositories>

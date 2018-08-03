@@ -22,7 +22,7 @@ public class ProcessBuilderExample {
 
     }
 
-    private static String output(InputStream inputStream) throws IOException {
+    public static String output(InputStream inputStream) throws IOException {
 
         StringBuilder sb = new StringBuilder();
         BufferedReader br = null;
