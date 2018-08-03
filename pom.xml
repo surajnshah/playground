@@ -18,7 +18,6 @@
         <module>web</module>
         <module>example</module>
         <module>monitoring</module>
-        <module>monitoring</module>
     </modules>
 
 
