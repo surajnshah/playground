@@ -7,7 +7,16 @@
 
 <body>
 <div class="container">
-    <h2>Monitor</h2>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Monitoring</h1>
+        </div>
+    </div>
+
+    <div id="root"></div>
+
+    <script src="../js/scripts.js"></script>
 
 </div>
 </body>
