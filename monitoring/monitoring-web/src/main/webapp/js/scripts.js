@@ -9,7 +9,7 @@ app.appendChild(container);
 var request = new XMLHttpRequest();
 
 // Open a new connection, using the GET request on the URL endpoint.
-request.open('GET', 'http://localhost:8082/rest/monitor', true);
+request.open('GET', '/rest/monitor', true);
 
 request.onload = function() {
 
