@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.lang.management.OperatingSystemMXBean;
 
+import static java.lang.Math.toIntExact;
+
 /**
  * @author surajshah on 03/08/2018
  * @project surajnshah.com
@@ -27,7 +29,18 @@ public class MonitorService {
 
         long totalMemory = Runtime.getRuntime().totalMemory();
 
-        Monitor monitor = new Monitor (cpuLoadAverage, availableProcessors, freeMemory, maxMemory, totalMemory);
+        long usedMemory = totalMemory - freeMemory;
+
+        double usedMemAsPercentage = toIntExact(usedMemory) / (double) toIntExact(totalMemory) * 100;
+
+        /*
+        System.out.println("Total memory: " + totalMemory);
+        System.out.println("Free memory: " + freeMemory);
+        System.out.println("Used memory: " + usedMemory);
+        System.out.println("Used memory (%): " + usedMemAsPercentage);
+        */
+
+        Monitor monitor = new Monitor (cpuLoadAverage, availableProcessors, freeMemory, maxMemory, totalMemory, usedMemAsPercentage);
 
         //System.out.println("About to provide : " + cpuLoadAverage + " to client.");
 

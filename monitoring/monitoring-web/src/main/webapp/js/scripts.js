@@ -33,8 +33,9 @@ request.onload = function() {
         var totalMemory = {element:"totalMemory", title:"Total Memory"};
         var availableProcessors = {element:"availableProcessors", title:"Available Processors"};
         var systemLoadAverage = {element:"systemLoadAverage", title:"System Load Average"};
+        var usedMemory = {element:"usedMemory", title:"Used Memory (%)"};
 
-        var monitors = [freeMemory, maxMemory, totalMemory, availableProcessors, systemLoadAverage];
+        var monitors = [freeMemory, maxMemory, totalMemory, availableProcessors, systemLoadAverage, usedMemory];
 
         div.appendChild(table);
         table.appendChild(tbody);
