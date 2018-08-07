@@ -14,8 +14,9 @@ public class Monitor {
     private long maxMemory;
     private long totalMemory;
     private double usedMemory;
+    private double systemCpuLoad;
 
-    public Monitor(double systemLoadAverage, int availableProcessors, long freeMemory, long maxMemory, long totalMemory, double usedMemory) {
+    public Monitor(double systemLoadAverage, int availableProcessors, long freeMemory, long maxMemory, long totalMemory, double usedMemory, double systemCpuLoad) {
 
         this.systemLoadAverage = systemLoadAverage;
         this.availableProcessors = availableProcessors;
@@ -23,6 +24,7 @@ public class Monitor {
         this.maxMemory = maxMemory;
         this.totalMemory = totalMemory;
         this.usedMemory = usedMemory;
+        this.systemCpuLoad = systemCpuLoad;
 
     }
 
@@ -74,6 +76,14 @@ public class Monitor {
         this.usedMemory = usedMemory;
     }
 
+    public double getSystemCpuLoad() {
+        return systemCpuLoad;
+    }
+
+    public void setSystemCpuLoad(double systemCpuLoad) {
+        this.systemCpuLoad = systemCpuLoad;
+    }
+
     @Override
     public String toString() {
 
@@ -82,7 +92,8 @@ public class Monitor {
                 .append(" Free Memory : ").append(this.freeMemory)
                 .append(" Max Memory : ").append(this.maxMemory)
                 .append(" Total Memory : ").append(this.totalMemory)
-                .append(" Used Memory : ").append(this.usedMemory).toString();
+                .append(" Used Memory : ").append(this.usedMemory)
+                .append(" System CPU Load : ").append(this.systemCpuLoad).toString();
 
     }
 

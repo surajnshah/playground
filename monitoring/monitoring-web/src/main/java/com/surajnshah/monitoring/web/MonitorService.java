@@ -41,7 +41,7 @@ public class MonitorService {
         System.out.println("Used memory (%): " + usedMemAsPercentage);
         */
 
-        Monitor monitor = new Monitor(cpuLoadAverage, availableProcessors, freeMemory, maxMemory, totalMemory, usedMemAsPercentage);
+        Monitor monitor = new Monitor(cpuLoadAverage, availableProcessors, freeMemory, maxMemory, totalMemory, usedMemAsPercentage, systemCpuLoad);
 
         //System.out.println("About to provide : " + cpuLoadAverage + " to client.");
 

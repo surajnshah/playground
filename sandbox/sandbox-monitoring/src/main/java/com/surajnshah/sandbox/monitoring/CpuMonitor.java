@@ -25,12 +25,14 @@ public class CpuMonitor {
         System.out.println("System Load Average : " + cpuLoadAverage);
         System.out.println("Process CPU Load: " + osMBean.getProcessCpuLoad());
 
+
         for (int i = 0; i < 10000; i++) {
 
             Thread.sleep(100);
             System.out.println("System CPU Load: " + osMBean.getSystemCpuLoad() * 100);
 
         }
+
 
         System.out.println("System CPU Load: " + osMBean.getSystemCpuLoad());
 
