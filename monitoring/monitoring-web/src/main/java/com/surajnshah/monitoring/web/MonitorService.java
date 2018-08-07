@@ -3,7 +3,6 @@ package com.surajnshah.monitoring.web;
 import javax.management.MBeanServerConnection;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
-import java.lang.management.OperatingSystemMXBean;
 
 import static java.lang.Math.toIntExact;
 
@@ -17,7 +16,7 @@ public class MonitorService {
 
         MBeanServerConnection mbsc = ManagementFactory.getPlatformMBeanServer();
 
-        OperatingSystemMXBean osMBean = ManagementFactory.newPlatformMXBeanProxy(mbsc, ManagementFactory.OPERATING_SYSTEM_MXBEAN_NAME, OperatingSystemMXBean.class);
+        com.sun.management.OperatingSystemMXBean osMBean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
 
         double cpuLoadAverage = osMBean.getSystemLoadAverage();
 
@@ -33,6 +32,8 @@ public class MonitorService {
 
         double usedMemAsPercentage = toIntExact(usedMemory) / (double) toIntExact(totalMemory) * 100;
 
+        double systemCpuLoad = osMBean.getSystemCpuLoad();
+
         /*
         System.out.println("Total memory: " + totalMemory);
         System.out.println("Free memory: " + freeMemory);
@@ -40,7 +41,7 @@ public class MonitorService {
         System.out.println("Used memory (%): " + usedMemAsPercentage);
         */
 
-        Monitor monitor = new Monitor (cpuLoadAverage, availableProcessors, freeMemory, maxMemory, totalMemory, usedMemAsPercentage);
+        Monitor monitor = new Monitor(cpuLoadAverage, availableProcessors, freeMemory, maxMemory, totalMemory, usedMemAsPercentage);
 
         //System.out.println("About to provide : " + cpuLoadAverage + " to client.");
 
