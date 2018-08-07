@@ -3,7 +3,10 @@ package com.surajnshah.monitoring.web;
 import javax.management.MBeanServerConnection;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
+import java.util.ArrayList;
+import java.util.List;
 
+import static java.lang.Double.NaN;
 import static java.lang.Math.toIntExact;
 
 /**
@@ -12,7 +15,7 @@ import static java.lang.Math.toIntExact;
  */
 public class MonitorService {
 
-    public Monitor getMonitor() throws IOException {
+    public Monitor getMonitor() throws IOException, InterruptedException {
 
         MBeanServerConnection mbsc = ManagementFactory.getPlatformMBeanServer();
 
@@ -32,20 +35,37 @@ public class MonitorService {
 
         double usedMemAsPercentage = toIntExact(usedMemory) / (double) toIntExact(totalMemory) * 100;
 
-        double systemCpuLoad = osMBean.getSystemCpuLoad();
+        long t = System.currentTimeMillis();
+        long end = t+2000;
 
-        /*
-        System.out.println("Total memory: " + totalMemory);
-        System.out.println("Free memory: " + freeMemory);
-        System.out.println("Used memory: " + usedMemory);
-        System.out.println("Used memory (%): " + usedMemAsPercentage);
-        */
+        List<Double> x = new ArrayList<>();
+
+        while(System.currentTimeMillis() < end) {
+            x.add(osMBean.getSystemCpuLoad());
+            Thread.sleep(100);
+        }
+
+        Double systemCpuLoad = new MonitorService().calculateAverage(x) * 100;
 
         Monitor monitor = new Monitor(cpuLoadAverage, availableProcessors, freeMemory, maxMemory, totalMemory, usedMemAsPercentage, systemCpuLoad);
 
-        //System.out.println("About to provide : " + cpuLoadAverage + " to client.");
-
         return monitor;
+
+    }
+
+    public double calculateAverage(List <Double> lists) {
+
+        Double sum = 0.0;
+        if (!lists.isEmpty()) {
+            for (Double list : lists) {
+                if (!list.equals(NaN)) {
+                    sum += list;
+                }
+            }
+            return sum.doubleValue() / lists.size();
+        }
+
+        return sum;
 
     }
 

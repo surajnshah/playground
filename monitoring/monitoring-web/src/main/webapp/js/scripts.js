@@ -34,13 +34,13 @@ request.onload = function() {
         var availableProcessors = {element:"availableProcessors", title:"Available Processors"};
         var systemLoadAverage = {element:"systemLoadAverage", title:"System Load Average"};
         var usedMemory = {element:"usedMemory", title:"Used Memory (%)"};
+        var systemCpuLoad = {element:"systemCpuLoad", title:"System CPU Load (%)"};
 
-        var monitors = [freeMemory, maxMemory, totalMemory, availableProcessors, systemLoadAverage, usedMemory];
+        var monitors = [freeMemory, maxMemory, totalMemory, availableProcessors, systemLoadAverage, usedMemory, systemCpuLoad];
 
         div.appendChild(table);
         table.appendChild(tbody);
 
-        //var i;
         for (var i = 0; i < monitors.length; i++) {
             const row = document.createElement('tr');
             const th = document.createElement('th');

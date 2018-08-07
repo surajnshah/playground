@@ -19,7 +19,7 @@ public class MonitorRestService {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Monitor getMonitor() throws IOException {
+    public Monitor getMonitor() throws IOException, InterruptedException {
 
         Monitor monitor = monitorService.getMonitor();
 

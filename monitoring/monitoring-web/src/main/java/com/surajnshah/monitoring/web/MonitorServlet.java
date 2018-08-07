@@ -25,7 +25,12 @@ public class MonitorServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Monitor monitor = monitorService.getMonitor();
+        Monitor monitor = null;
+        try {
+            monitor = monitorService.getMonitor();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         forwardMonitor(req, resp, monitor);
 
     }
