@@ -14,6 +14,7 @@
     <modules>
         <module>example-employees-app</module>
         <module>example-processbuilder</module>
+        <module>example-websocket</module>
     </modules>
 
 
