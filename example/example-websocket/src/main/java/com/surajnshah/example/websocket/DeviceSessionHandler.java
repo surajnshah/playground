@@ -14,8 +14,6 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.surajnshah.example.model.Device;
-
 /**
  * @author surajshah on 10/08/2018
  * @project surajnshah.com
