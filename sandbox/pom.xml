@@ -14,6 +14,7 @@
     <modules>
         <module>sandbox-helloworld</module>
         <module>sandbox-monitoring</module>
+        <module>sandbox-websocket</module>
     </modules>
 
 
