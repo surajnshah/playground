@@ -1,7 +1,6 @@
 package com.surajnshah.monitoring.web;
 
 import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jettison.json.JSONObject;
 
 import javax.websocket.OnError;
 import javax.websocket.OnMessage;
@@ -54,7 +53,7 @@ public class MonitorSocketServer {
                         sendAll(json);
                     }
                     try {
-                        sleep(5000);
+                        sleep(2000);
                     } catch (InterruptedException e) {
 
                     }
