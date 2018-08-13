@@ -18,6 +18,15 @@
 
     <script src="../js/scripts.js"></script>
 
+    <table>
+        <tr>
+            <td> <label id="monitorLbl">Monitor Data:</label></td>
+            <td> <label id="monitor">0</label></td>
+        </tr>
+    </table>
+
+    <script src="../js/socketscript.js"></script>
+
 </div>
 </body>
 </html>
