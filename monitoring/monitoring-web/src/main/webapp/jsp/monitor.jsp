@@ -10,7 +10,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h1>Monitoring</h1>
+            <h1>REST Based Monitor</h1>
         </div>
     </div>
 
@@ -18,12 +18,13 @@
 
     <script src="../js/scripts.js"></script>
 
-    <table>
-        <tr>
-            <td> <label id="monitorLbl">Monitor Data:</label></td>
-            <td> <label id="monitor">0</label></td>
-        </tr>
-    </table>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Socket Based Monitor</h1>
+        </div>
+    </div>
+
+    <div id="socketroot"></div>
 
     <script src="../js/socketscript.js"></script>
 

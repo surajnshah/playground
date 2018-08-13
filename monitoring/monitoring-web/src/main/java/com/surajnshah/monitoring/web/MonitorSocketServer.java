@@ -1,5 +1,8 @@
 package com.surajnshah.monitoring.web;
 
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jettison.json.JSONObject;
+
 import javax.websocket.OnError;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
@@ -31,6 +34,8 @@ public class MonitorSocketServer {
             public void run() {
 
                 MonitorService monitorService = new MonitorService();
+                ObjectMapper mapper = new ObjectMapper();
+                String json = "";
                 while (true) {
                     Monitor monitor = null;
                     try {
@@ -41,7 +46,12 @@ public class MonitorSocketServer {
                         e.printStackTrace();
                     }
                     if (queue != null) {
-                        sendAll("Monitor Data: " + monitor.toString());
+                        try {
+                            json = mapper.writeValueAsString(monitor);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        sendAll(json);
                     }
                     try {
                         sleep(5000);
