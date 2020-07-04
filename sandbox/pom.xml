@@ -15,6 +15,7 @@
         <module>sandbox-helloworld</module>
         <module>sandbox-monitoring</module>
         <module>sandbox-websocket</module>
+        <module>sandbox-jaxb-binding-generator</module>
     </modules>
 
 
